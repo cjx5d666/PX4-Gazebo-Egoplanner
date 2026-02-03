@@ -195,7 +195,7 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 
 根据 GitHub 仓库说明，将对应文件分发至以下目录：
 
-* **模型文件**：`iris_depth_camera.sdf` -> `~/PX4-Autopilot/Tools/sitl_gazebo/models/iris_depth_camera/`
+* **模型文件**：`iris_depth_camera.sdf` & `moedl.config` -> `~/PX4-Autopilot/Tools/sitl_gazebo/models/iris_depth_camera/`
 * **启动配置**：`px4_single.launch` & `advanced_param_px4.xml` -> `~/catkin_ws/src/ego-planner/src/planner/plan_manage/launch/`
 * **核心脚本**：`fix_cloud.py` / `px4_bridge.py` / `mission_manager.py` -> `~/catkin_ws/`
 
