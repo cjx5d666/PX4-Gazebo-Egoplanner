@@ -12,16 +12,16 @@
 
 ## 目录
 
-* [0. 系统前置准备](https://www.google.com/search?q=%230-%E7%B3%BB%E7%BB%9F%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87)
-* [1. 软件源配置](https://www.google.com/search?q=%231-%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%85%8D%E7%BD%AE)
-* [2. 安装 ROS Noetic](https://www.google.com/search?q=%232-%E5%AE%89%E8%A3%85-ros-noetic)
-* [3. 安装 MAVROS & GeographicLib](https://www.google.com/search?q=%233-%E5%AE%89%E8%A3%85-mavros--geographiclib)
-* [4. 安装 PX4 v1.13.0](https://www.google.com/search?q=%234-%E5%AE%89%E8%A3%85-px4-v1130)
-* [5. 安装 Ego-Planner](https://www.google.com/search?q=%235-%E5%AE%89%E8%A3%85-ego-planner)
-* [6. PX4 关键参数优化](https://www.google.com/search?q=%236-px4-%E5%85%B3%E9%94%AE%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96)
-* [7. 添加自定义魔改文件](https://www.google.com/search?q=%237-%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AD%94%E6%94%B9%E6%96%87%E4%BB%B6)
-* [8. 启动顺序与测试](https://www.google.com/search?q=%238-%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F%E4%B8%8E%E6%B5%8B%E8%AF%95)
-* [常见问题排查](https://www.google.com/search?q=%23%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5)
+* [0. 系统前置准备]
+* [1. 软件源配置]
+* [2. 安装 ROS Noetic]
+* [3. 安装 MAVROS & GeographicLib]
+* [4. 安装 PX4 v1.13.0]
+* [5. 安装 Ego-Planner]
+* [6. PX4 关键参数优化]
+* [7. 添加自定义魔改文件]
+* [8. 启动顺序与测试]
+* [常见问题排查]
 
 ---
 
