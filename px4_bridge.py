@@ -19,7 +19,7 @@ from std_msgs.msg import Bool, Header
 class Config:
     # --- 安全参数 ---
     MIN_HEIGHT = 0.5            # [安全] 最低飞行高度 (m)
-    MAX_SPEED_LIMIT = 2.0       # [安全] 物理最大速度 (m/s)
+    MAX_SPEED_LIMIT = 1.5       # [安全] 物理最大速度 (m/s)
     PLANNER_TIMEOUT = 0.5       # [监控] Planner 数据超时时间
     MISSION_TIMEOUT = 1.0       # [监控] Mission 心跳超时时间 (关键安全特性)
     
@@ -182,11 +182,16 @@ class PX4Bridge:
         # 3. 悬停锁存逻辑 (关键防抖)
         if self.state == FlightState.HOVERING:
             if self.last_state != FlightState.HOVERING or self.hover_pose is None:
-                # 刚切入悬停 -> 拍照留念，锁死位置
-                self.hover_pose = self.local_pose.pose.position
+                # 刚切入悬停 -> 显式记录当前位置，防止引用污染
+                curr_p = self.local_pose.pose.position
+                from geometry_msgs.msg import Point # 确保导入了Point
+                self.hover_pose = Point(x=curr_p.x, y=curr_p.y, z=curr_p.z)
+                
+                # 自动修正悬停高度：如果当前太低，强制锁在安全高度
                 self.hover_pose.z = max(self.hover_pose.z, Config.MIN_HEIGHT)
+                
                 self.last_vel_smooth = None
-                rospy.loginfo(f"[Bridge] Position Locked: [{self.hover_pose.x:.1f}, {self.hover_pose.y:.1f}]")
+                rospy.loginfo(f"[Bridge] Position Locked at: x={self.hover_pose.x:.2f}, y={self.hover_pose.y:.2f}")
         else:
             self.hover_pose = None
 
