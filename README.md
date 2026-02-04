@@ -240,6 +240,7 @@ roslaunch ego_planner px4_single.launch
 
 * **无法切入 OFFBOARD**：检查 `COM_RCL_EXCEPT` 是否已设为 4，并确保 `px4_bridge.py` 正在以高频发送 setpoint。
 * **RViz 显示空白**：需手动 `Add` -> `TF` 以及 `PointCloud2`（Topic 选择 `/depth_camera/points`）。
-* **路径找不到**：检查 `.bashrc` 中的 `ROS_PACKAGE_PATH` 是否包含了 `PX4-Autopilot` 路径。
+* **路径找不到**：检查 `.bashrc` 中的 `ROS_PACKAGE_PATH` 是否包含了 `PX4-Autopilot` 路径，是否放在所有source指令的最后（防止被覆盖）。
+* **新添加obstacle_manager.py**：可以在Gazebo里随机生成20个障碍物。
 
 ---
