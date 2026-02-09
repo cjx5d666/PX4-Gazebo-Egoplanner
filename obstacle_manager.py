@@ -44,8 +44,8 @@ def spawn_random_obstacles(count=15, range_x=[-10, 10], range_y=[-10, 10], safe_
                 break
         
         # 随机半径和高度
-        radius = random.uniform(0.2, 0.5)
-        height = random.uniform(2.0, 5.0)
+        radius = random.uniform(0.6, 0.8)
+        height = random.uniform(3.2, 4.0)
         
         # 设置姿态 (地面中心点)
         pose = Pose()
@@ -61,6 +61,6 @@ def spawn_random_obstacles(count=15, range_x=[-10, 10], range_y=[-10, 10], safe_
             print(f"Spawn service failed: {e}")
 
 if __name__ == "__main__":
-    # 配置：生成 20 个障碍物，范围在 15x15 米内，起始点 3 米内不生成
-    spawn_random_obstacles(count=20, range_x=[-15, 15], range_y=[-15, 15], safe_zone=3.0)
+    # 配置：生成 n 个障碍物，范围在 nxn 米内，起始点 n 米内不生成
+    spawn_random_obstacles(count=10, range_x=[-9, 9], range_y=[-9, 9], safe_zone=3.0)
     print("--- 生成完毕，开始你的避障表演 ---")

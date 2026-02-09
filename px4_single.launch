@@ -38,17 +38,17 @@
     <arg name="fx" value="$(arg fx)"/>
     <arg name="fy" value="$(arg fy)"/>
     
-    <arg name="max_vel" value="1.0" />
-    <arg name="max_acc" value="1.0" />
-    <arg name="planning_horizon" value="7.5" />
-    <arg name="use_distinctive_trajs" value="true" />
+    <arg name="max_vel" value="1.2" />
+    <arg name="max_acc" value="1.5" />
+    <arg name="planning_horizon" value="8" />
+    <arg name="use_distinctive_trajs" value="false" />
     <arg name="flight_type" value="1" />
   </include>
   
   <node pkg="ego_planner" name="traj_server" type="traj_server" output="screen">
     <remap from="/position_cmd" to="/planning/pos_cmd"/>
     <remap from="/odom_world" to="$(arg odom_topic)"/>
-    <param name="traj_server/time_forward" value="1.0" type="double"/>
+    <param name="traj_server/time_forward" value="2.0" type="double"/>
   </node>
   
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ego_planner)/launch/default.rviz" required="true" />
